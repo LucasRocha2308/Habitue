@@ -30,7 +30,7 @@ export default createGlobalStyle`
     a{
         text-decoration: none;
     }
-    ul,li{
+    ul,li,ol{
         list-style: none;
     }
     `;
