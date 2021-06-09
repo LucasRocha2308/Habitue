@@ -1,0 +1,32 @@
+import styled from "styled-components";
+
+export const StyledImage = styled.img`
+  margin: 0 auto;
+`;
+export const DivHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  gap: 20px;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @media only screen and (min-width: 768px) {
+      font-size: 52px;
+    }
+  }
+  img {
+    margin: 0 auto;
+    width: 300px;
+    @media only screen and (min-width: 768px) {
+      width: 1000px;
+    }
+  }
+`;
