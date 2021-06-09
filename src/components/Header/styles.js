@@ -18,4 +18,7 @@ export const Logo = styled.img`
 export const DivButtons = styled.div`
   display: flex;
   gap: 20px;
+  @media only screen and (min-width: 768px) {
+    gap: 40px;
+  }
 `;
