@@ -12,9 +12,11 @@ export const DivHome = styled.div`
   text-align: center;
   @media only screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
+    padding: 0 100px;
   }
 
-  h2 {
+  div h2 {
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
@@ -27,6 +29,7 @@ export const DivHome = styled.div`
     width: 300px;
     @media only screen and (min-width: 768px) {
       width: 1000px;
+      margin-left: -100px;
     }
   }
 `;
