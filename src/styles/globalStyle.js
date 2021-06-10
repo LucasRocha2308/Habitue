@@ -12,6 +12,7 @@ export default createGlobalStyle`
             --green: #6ADB7E;
             --dark-green: #4D8F6A;
             --green-header: #5CC170;
+            --red: #c53030;
         }
         
     body{

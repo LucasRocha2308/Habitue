@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "../../styles/globalStyle";
 
 export const ButtonGreen = styled.button`
   background-color: var(--dark-green);
