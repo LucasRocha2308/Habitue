@@ -95,7 +95,22 @@ Solucionando um grande problema recorrente que é a falta de **controle financei
 </div>
 
 ## **:star2: AGRADECIMENTOS**
+<div align=center>
 
+<table style="width:100%">
+  <tr align=center>
+    <th><strong>Kenzie Academy Brasil</strong></th>
+  </tr>
+  <tr align=center>
+    <td>
+      <a href="https://kenzie.com.br/">
+        <img src="https://kenzie.com.br/images/popup-img.svg">
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 <!-- Badges -->
 [BADGE_WEB_REACT]: https://img.shields.io/badge/web-react-blue
