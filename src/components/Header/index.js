@@ -1,13 +1,22 @@
 import { DivButtons, DivHeader, Logo } from "./styles";
 import logo from "../../images/logo.svg";
 import { ButtonGreen, ButtonWhite } from "../Button";
+import { useHistory } from "react-router";
 const Header = () => {
+  const history = useHistory();
+  const handleLogin = () => {
+    history.push("/login");
+  };
+  const handleRegister = () => {
+    history.push("/register");
+  };
+
   return (
     <DivHeader>
       <Logo src={logo} alt="logo-habitue" />
       <DivButtons>
-        <ButtonGreen>Login</ButtonGreen>
-        <ButtonWhite>Cadastre</ButtonWhite>
+        <ButtonGreen onClick={handleLogin}>Login</ButtonGreen>
+        <ButtonWhite onClick={handleRegister}>Cadastre</ButtonWhite>
       </DivButtons>
     </DivHeader>
   );
