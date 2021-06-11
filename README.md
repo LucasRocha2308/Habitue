@@ -34,8 +34,9 @@ Solucionando um grande problema recorrente que é a falta de **controle financei
     - **[Styled Components][styled-components]**
     - **[Material UI][@material-ui/core]** 
     - **[React Toastify][react-toastify]**
-    - **[React JWT][react-jwt]**
+    - **[Jwt-decode][jwt-decode]**
     - **[React pdfmake][react-pdfmake]**
+    
 
 #### **Server** ([Api] [habit])
   - link para a API(https://habit-docs.vercel.app/)
