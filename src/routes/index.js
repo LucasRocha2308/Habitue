@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Route from "./route";
+import Habit from "../pages/Habit";
+
 const Routes = () => {
   return (
     <Switch>
@@ -11,8 +13,8 @@ const Routes = () => {
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/habit" component={Habit} isPrivate />
       {/*
-      <Route path="/habit" component={Habit} />
       
       <Route path="/dashboard" component={Dashboard} isPrivate /> */}
     </Switch>
