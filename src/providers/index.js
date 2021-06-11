@@ -1,5 +1,6 @@
+import { AuthProvider } from "./auth";
 const Providers = ({ children }) => {
-  return <>{children}</>;
+  return <AuthProvider>{children}</AuthProvider>;
 };
 
 export default Providers;

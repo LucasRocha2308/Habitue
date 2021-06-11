@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,6 +31,11 @@ export const Container = styled.div`
     margin: 0 auto;
     max-width: 280px;
   }
+`;
+export const NavLink = styled(Link)`
+  margin: 10px auto;
+  width: 120px;
+  font-size: 18px;
 `;
 export const ContainerLogin = styled.div`
   position: absolute;
