@@ -1,5 +1,6 @@
 import Card from "../../components/Card";
 import HeaderPages from "../../components/HeaderPages";
+
 import { DivCards, StyledH1, Bo } from "./styles";
 
 const Dashboard = () => {

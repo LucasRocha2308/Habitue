@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ export const Container = styled.div`
   }
   @media (min-width: 1100px) {
     img {
-      top: 45px;
+      top: 15px;
       right: 213px;
     }
   }
@@ -31,19 +31,25 @@ export const Container = styled.div`
     max-width: 280px;
   }
 `;
+export const NavLink = styled(Link)`
+  margin: 10px auto;
+  width: 120px;
+  font-size: 18px;
+`;
 export const ContainerRegister = styled.div`
   position: absolute;
   width: 100%;
   height: 350px;
   top: calc(360px / 2 + 25px);
   @media (min-width: 571px) {
-    top: calc(200px / 2 + 25px);
+    top: calc(100px / 2 + 25px);
     right: 10px;
   }
 `;
+
 export const ContainerForm = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
@@ -67,7 +73,7 @@ export const ContainerForm = styled.div`
   }
   @media (min-width: 1100px) {
     width: 40%;
-    height: 450px;
+    height: 500px;
   }
 
   h2 {
