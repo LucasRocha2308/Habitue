@@ -39,7 +39,7 @@ const Login = () => {
               name="username"
               icon={FiUser}
               label="Usuario"
-              error={errors.login?.message}
+              error={errors.username?.message}
             />
 
             <Input
