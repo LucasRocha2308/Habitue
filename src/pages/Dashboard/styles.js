@@ -1,8 +1,12 @@
 import styled from "styled-components";
-
+import backgroundDashboard from "../../images/backgroundDashboard.svg";
 export const DivCards = styled.div`
   display: flex;
   flex-direction: column;
+  background-image: url(${backgroundDashboard});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     gap: 20px;
@@ -10,7 +14,7 @@ export const DivCards = styled.div`
     justify-content: center;
   }
 `;
-export const Bo = styled.div`
+export const Container = styled.div`
   background-color: var(--gray);
   min-height: 100vh;
 `;

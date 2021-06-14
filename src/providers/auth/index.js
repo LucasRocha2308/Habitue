@@ -13,11 +13,9 @@ export const AuthProvider = ({ children }) => {
     api
       .post("sessions/", userData)
       .then((response) => {
-        console.log(response);
         localStorage.setItem("@Habitue:token", response.data.access);
         const decodedToken = jwt_decode(response.data.access);
         setAuth(decodedToken);
-        console.log(jwt_decode(response.data.access));
         toast.success("Você foi Logado");
         history.push("/dashboard");
       })
