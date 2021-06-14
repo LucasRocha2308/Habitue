@@ -19,7 +19,7 @@ const HeaderPages = () => {
 
   return (
     <DivHeaderPages>
-      <Logo src={logo} alt="logo-habitue" />
+      <Logo src={logo} alt="logo-habitue" onClick={() => history.push("/")} />
       <div className="menu-burguer">
         <MenuBurguer />
       </div>

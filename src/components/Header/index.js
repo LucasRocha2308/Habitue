@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <DivHeader>
-      <Logo src={logo} alt="logo-habitue" />
+      <Logo src={logo} alt="logo-habitue" onClick={() => history.push("/")} />
       <DivButtons>
         <ButtonGreen onClick={handleLogin}>Login</ButtonGreen>
         <ButtonWhite onClick={handleRegister}>Cadastre</ButtonWhite>
