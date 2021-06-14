@@ -29,11 +29,16 @@ export const InputContainer = styled.div`
 
   input {
     padding: 5px 5px 5px 0;
-    height: 27px;
+    height: 30px;
     border: 1px solid var(--green-header);
     border-radius: 3px;
     margin: 10px auto;
   }
+
+  input::placeholder {
+    color: var(--green);
+  }
+
   svg {
     margin-right: 16px;
   }
