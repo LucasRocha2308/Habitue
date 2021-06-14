@@ -10,7 +10,6 @@ import { ContainerRegister, Form } from "./styles";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import api from "../../services/api";
-import { useUser } from "../../providers/user";
 
 const RegisterHabit = () => {
   const history = useHistory();
@@ -27,12 +26,19 @@ const RegisterHabit = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const { id } = useUser();
+  const token = localStorage.getItem("@Habitue:token");
+  const id = localStorage.getItem("@Habitue:id");
+
   const onSubmitFunction = (data) => {
     data.user = parseInt(id);
     console.log(data);
+
     api
-      .post("habits/")
+      .post("habits/", data, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
       .then((_) => {
         toast.success("Sucesso ao criar um hábito");
         return history.push("/dashboard");
