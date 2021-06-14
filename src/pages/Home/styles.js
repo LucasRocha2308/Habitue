@@ -10,6 +10,7 @@ export const DivHome = styled.div`
   padding: 50px;
   gap: 20px;
   text-align: center;
+
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
@@ -25,6 +26,7 @@ export const DivHome = styled.div`
       font-size: 52px;
     }
   }
+
   img {
     margin: 0 auto;
     width: 300px;
