@@ -5,10 +5,14 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
-import { Bo, StyledH1 } from "../Dashboard/styles";
+import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "./styles";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
+import api from "../../services/api";
 
 const RegisterHabit = () => {
+  const history = useHistory();
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     category: yup.string().required("Campo obrigatório!"),
@@ -21,12 +25,24 @@ const RegisterHabit = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
+
   const onSubmitFunction = (data) => {
-    console.log(data);
+    const user_id = localStorage.getItem("@Habitue:id");
+    data.user = parseInt(user_id);
+
+    api
+      .post("habits/", data)
+      .then((_) => {
+        toast.success("Sucesso ao criar um hábito");
+        return history.push("/dashboard");
+      })
+      .catch((_) => {
+        toast.error("Erro ao criar um hábito");
+      });
   };
 
   return (
-    <Bo>
+    <Container>
       <HeaderPages />
       <ContainerRegister>
         <Form onSubmit={handleSubmit(onSubmitFunction)}>
@@ -74,7 +90,7 @@ const RegisterHabit = () => {
         </Form>
         <img src={imgFormHabit} alt="" />
       </ContainerRegister>
-    </Bo>
+    </Container>
   );
 };
 
