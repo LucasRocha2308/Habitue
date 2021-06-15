@@ -6,8 +6,8 @@ import { useEffect } from "react";
 const HabitsContext = createContext();
 
 export const HabitsProvider = ({ children }) => {
-  const [habit, setHabit] = useState([]);
   const token = localStorage.getItem("@Habitue:token");
+  const [habit, setHabit] = useState([]);
 
   const registerHabit = (data, history) => {
     api
@@ -26,18 +26,18 @@ export const HabitsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (habit.length) {
-      api
-        .get("habits/personal/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        })
-        .then((res) => setHabit([...habit, res.data.results]))
-        .catch((err) => console.log(err));
-    }
+    api
+      .get("habits/personal/", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((res) => setHabit(res.data))
+      .catch((err) => console.log(err));
+
     // eslint-disable-next-line
-  }, [habit]);
+  }, []);
+  console.log(habit);
 
   return (
     <HabitsContext.Provider value={{ habit, setHabit, registerHabit }}>

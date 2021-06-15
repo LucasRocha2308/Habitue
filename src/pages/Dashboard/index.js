@@ -24,7 +24,7 @@ const Dashboard = () => {
       <StyledH1>Olá, {user}</StyledH1>
 
       <DivCards>
-        {habit.length ? (
+        {!habit.length ? (
           <Card
             valueTitle="Hábitos"
             valueDescription="Está sem hábitos para controlar melhor seu dinheiro, clique abaixo e cadastre alguns."
@@ -32,12 +32,13 @@ const Dashboard = () => {
             handleClick={handleHabits}
           />
         ) : (
-          <Card
-            valueTitle="Hábitos"
-            valueDescription="Voce tem 10 habitos"
-            textButton="Hábitos"
-            handleClick={handleHabits}
-          />
+          // <Card
+          //   valueTitle="Hábitos"
+          //   valueDescription="Voce tem 10 habitos"
+          //   textButton="Hábitos"
+          //   handleClick={handleHabits}
+          // />
+          <div>{habit.length}</div>
         )}
 
         <Card
