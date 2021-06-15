@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import backgroundDashboard from "../../images/backgroundDashboard.svg";
+
 export const DivCards = styled.div`
   display: flex;
   flex-direction: column;

@@ -22,11 +22,12 @@ const Dashboard = () => {
     <Container>
       <HeaderPages />
       <StyledH1>Olá, {user}</StyledH1>
+
       <DivCards>
         {habit.length ? (
           <Card
             valueTitle="Hábitos"
-            valueDescription="Você tem qtd hábitos cadastrados para informações detalhadas vá para hábitos"
+            valueDescription="Está sem hábitos para controlar melhor seu dinheiro, clique abaixo e cadastre alguns."
             textButton="Hábitos"
             handleClick={handleHabits}
           />
@@ -41,7 +42,7 @@ const Dashboard = () => {
 
         <Card
           valueTitle="Grupos"
-          valueDescription="Você tem qtd Grupos cadastrados para informações detalhadas vá para Grupos"
+          valueDescription="Ainda não está buscando o milhão? Cadastre no grupo para colocar suas metas."
           textButton="Grupos"
           handleClick={handleGroups}
         />

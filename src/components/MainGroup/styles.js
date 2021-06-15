@@ -52,7 +52,7 @@ export const CardsContainer = styled.div`
 
 export const Container = styled.div`
   background-color: var(--gray);
-  height: 100vh;
+  min-height: 100vh;
 `;
 export const StyledH1 = styled.h1`
   text-align: center;
