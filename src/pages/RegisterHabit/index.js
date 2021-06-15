@@ -7,12 +7,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "./styles";
-import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-import api from "../../services/api";
+import { useHabits } from "../../providers/habits";
 
 const RegisterHabit = () => {
   const history = useHistory();
+  const { registerHabit } = useHabits();
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     category: yup.string().required("Campo obrigatório!"),
@@ -26,26 +26,11 @@ const RegisterHabit = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const token = localStorage.getItem("@Habitue:token");
   const id = localStorage.getItem("@Habitue:id");
 
   const onSubmitFunction = (data) => {
     data.user = parseInt(id);
-    console.log(data);
-
-    api
-      .post("habits/", data, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then((_) => {
-        toast.success("Sucesso ao criar um hábito");
-        return history.push("/dashboard");
-      })
-      .catch((_) => {
-        toast.error("Erro ao criar um hábito");
-      });
+    registerHabit(data, history);
   };
 
   return (
