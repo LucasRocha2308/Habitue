@@ -40,7 +40,7 @@ const Register = () => {
         return history.push("/login");
       })
       .catch((_) => {
-        toast.error("Tente outro email");
+        toast.error(" Este usuário já está cadastrado");
       });
   };
   return (
@@ -57,7 +57,7 @@ const Register = () => {
               register={register}
               icon={FiUser}
               name="username"
-              label="Usuario"
+              label="Usuário"
               error={errors.username?.message}
             />
             <div>
