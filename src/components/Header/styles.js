@@ -10,6 +10,7 @@ export const DivHeader = styled.div`
   }
 `;
 export const Logo = styled.img`
+  cursor: pointer;
   @media only screen and (min-width: 768px) {
     width: 150px;
   }
