@@ -20,14 +20,15 @@ export const HabitsProvider = ({ children }) => {
       })
       .then((_) => {
         toast.success("Sucesso ao criar um hábito");
-        return history.push("/dashboard");
+        history.push("/dashboard");
       })
       .catch((_) => {
         toast.error("Erro ao criar um hábito");
       });
+    callHabits();
   };
 
-  useEffect(() => {
+  const callHabits = () => {
     api
       .get("habits/personal/", {
         headers: {
@@ -36,13 +37,26 @@ export const HabitsProvider = ({ children }) => {
       })
       .then((res) => setHabit(res.data))
       .catch((err) => console.log(err));
+  };
 
+  useEffect(() => {
+    callHabits();
     // eslint-disable-next-line
   }, [auth]);
   console.log(habit);
 
+  const removeHabit = (id) => {
+    api.delete(`habits/${id}/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    const newList = habit.filter((elem) => elem.id !== id);
+    setHabit(newList);
+  };
+
   return (
-    <HabitsContext.Provider value={{ habit, setHabit, registerHabit }}>
+    <HabitsContext.Provider value={{ habit, removeHabit, registerHabit }}>
       {children}
     </HabitsContext.Provider>
   );

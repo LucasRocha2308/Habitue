@@ -12,6 +12,8 @@ export const CardStyle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
+  padding: 20px 0;
 
   h2 {
     color: var(--gray);
@@ -30,10 +32,34 @@ export const FlexCard = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  button {
+  & > button {
     position: fixed;
     bottom: 20px;
-    left: 50%;
+    left: 30%;
+    padding: 0, 30px;
     transform: translate(-50%);
+  }
+
+  & > button:last-of-type {
+    bottom: 20px;
+    left: 70%;
+  }
+`;
+
+export const BntRemove = styled.button`
+  background: #464353;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.57);
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  ::after {
+    content: "X";
+    color: #ffffff;
+    backdrop-filter: blur(4px);
   }
 `;
