@@ -15,7 +15,7 @@ const Dashboard = () => {
   const handleGroups = () => {
     return history.push("/group");
   };
-  console.log(user);
+
   return (
     <Container>
       <HeaderPages />

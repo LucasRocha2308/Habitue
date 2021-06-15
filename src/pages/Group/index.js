@@ -1,12 +1,12 @@
 import Header from "../../components/HeaderPages";
-import MainHabit from "../../components/MainHabit";
+import MainGroup from "../../components/MainGroup";
 import { Container } from "./styles";
 
-const Habit = () => (
+const Group = () => (
   <Container>
     <Header />
-    <MainHabit />
+    <MainGroup />
   </Container>
 );
 
-export default Habit;
+export default Group;

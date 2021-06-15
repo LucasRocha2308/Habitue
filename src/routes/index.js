@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Route from "./route";
 import Habit from "../pages/Habit";
+import Group from "../pages/Group";
 
 const Routes = () => {
   return (
@@ -14,9 +15,7 @@ const Routes = () => {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/habit" component={Habit} isPrivate />
-      {/*
-      
-      <Route path="/dashboard" component={Dashboard} isPrivate /> */}
+      <Route path="/group" component={Group} isPrivate />
     </Switch>
   );
 };

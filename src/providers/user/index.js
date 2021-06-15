@@ -16,11 +16,10 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem("@Habitue:id", id);
         const currentUser = response.data.username;
         setUser(currentUser);
-        console.log(currentUser);
       });
     }
   }, [id]);
-  console.log("usuario", user);
+
   return (
     <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
   );
