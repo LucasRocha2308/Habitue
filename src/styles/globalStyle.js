@@ -15,10 +15,12 @@ export default createGlobalStyle`
             --red: #c53030;
         }
         
+        
+
+        
     body{
         background: var(--green);
-        color: var(--white);
-        height: 100vh;
+        color: var(--white);        
     }
     body,input, button{
         font-family: 'Roboto', sans-serif;

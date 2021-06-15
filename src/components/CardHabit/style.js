@@ -5,9 +5,9 @@ export const CardStyle = styled.div`
   box-shadow: -1px 4px 4px 1px #5cc170;
   border-radius: 10px;
   background: #6adb7e;
-  margin: 70px auto;
-  width: 165px;
-  height: 250px;
+  margin: 20px auto;
+  width: 180px;
+  height: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,11 @@ export const CardStyle = styled.div`
 
   p:last-child {
     color: var(--gray);
+  }
+
+  & > label {
+    color: var(--dark-green);
+    margin-top: 5px;
   }
 `;
 
