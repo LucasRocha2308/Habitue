@@ -5,7 +5,7 @@ export const BackCard = styled.div`
   border-radius: 11px;
   margin: 50px auto;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
   font-size: 24px;
