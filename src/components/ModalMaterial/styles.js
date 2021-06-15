@@ -30,7 +30,7 @@ export const ModalContent = styled.div`
     gap: 10px;
   }
   button {
-    border-radius: 50%;
+    border-radius: 40px 40px 40px 40px;
     border: #ffffff;
     background-color: #6adb7e;
     color: #ffffff;

@@ -34,6 +34,7 @@ export const ButtonWhite = styled(ButtonGreen)`
   color: var(--green);
   &:hover {
     z-index: 2;
+    color: var(--white);
   }
   &:before {
     background: var(--gray);
