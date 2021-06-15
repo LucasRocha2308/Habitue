@@ -18,6 +18,7 @@ export default createGlobalStyle`
     body{
         background: var(--green);
         color: var(--white);
+        height: 100vh;
     }
     body,input, button{
         font-family: 'Roboto', sans-serif;

@@ -1,10 +1,10 @@
-import Header from "../../components/HeaderPages";
+import HeaderPages from "../../components/HeaderPages";
 import MainHabit from "../../components/MainHabit";
 import { Container } from "./styles";
 
 const Habit = () => (
   <Container>
-    <Header />
+    <HeaderPages />
     <MainHabit />
   </Container>
 );
