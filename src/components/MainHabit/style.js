@@ -5,19 +5,19 @@ export const BackCard = styled.div`
   border-radius: 11px;
   margin: 50px auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: space-evenly;
   align-items: center;
   font-size: 24px;
   padding: 20px;
   text-align: center;
-
+  box-sizing: border-box;
   width: 90vw;
   height: 220px;
 
   @media (min-width: 600px) {
     max-width: 870px;
-    height: 500px;
+    height: 300px;
   }
 
   button {
