@@ -3,11 +3,11 @@ import { HabitsProvider } from "./habits";
 import { UserProvider } from "./user";
 const Providers = ({ children }) => {
   return (
-    <HabitsProvider>
-      <AuthProvider>
-        <UserProvider>{children}</UserProvider>
-      </AuthProvider>
-    </HabitsProvider>
+    <AuthProvider>
+      <UserProvider>
+        <HabitsProvider>{children}</HabitsProvider>
+      </UserProvider>
+    </AuthProvider>
   );
 };
 

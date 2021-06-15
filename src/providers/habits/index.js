@@ -2,12 +2,14 @@ import { createContext, useContext, useState } from "react";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { useAuth } from "../auth";
 
 const HabitsContext = createContext();
 
 export const HabitsProvider = ({ children }) => {
   const token = localStorage.getItem("@Habitue:token");
   const [habit, setHabit] = useState([]);
+  const { auth } = useAuth();
 
   const registerHabit = (data, history) => {
     api
@@ -36,7 +38,7 @@ export const HabitsProvider = ({ children }) => {
       .catch((err) => console.log(err));
 
     // eslint-disable-next-line
-  }, []);
+  }, [auth]);
   console.log(habit);
 
   return (
