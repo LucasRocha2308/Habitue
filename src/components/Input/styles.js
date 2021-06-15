@@ -28,7 +28,7 @@ export const InputContainer = styled.div`
     `}
 
   input {
-    padding: 5px 5px 5px 0;
+    padding: 5px 0px 5px 5px;
     height: 30px;
     border: 1px solid var(--green-header);
     border-radius: 3px;

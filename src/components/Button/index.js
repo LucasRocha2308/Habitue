@@ -19,7 +19,7 @@ export const ButtonGreen = styled.button`
     width: 0;
     height: 100%;
     background: var(--green);
-    transition: 0.8s;
+    transition: 0.2s;
     z-index: -1;
     top: 0;
     border-radius: 10px;
