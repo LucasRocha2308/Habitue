@@ -32,13 +32,14 @@ const Dashboard = () => {
             handleClick={handleHabits}
           />
         ) : (
-          // <Card
-          //   valueTitle="Hábitos"
-          //   valueDescription="Voce tem 10 habitos"
-          //   textButton="Hábitos"
-          //   handleClick={handleHabits}
-          // />
-          <div>{habit.length}</div>
+          <Card
+            valueTitle="Hábitos"
+            textButton="Hábitos"
+            handleClick={handleHabits}
+          >
+            Você tem {habit.length} hábitos cadastrados para informações
+            detalhadas vá para hábitos.
+          </Card>
         )}
 
         <Card
@@ -47,6 +48,14 @@ const Dashboard = () => {
           textButton="Grupos"
           handleClick={handleGroups}
         />
+        <Card
+          valueTitle="Grupos"
+          textButton="Grupos"
+          handleClick={handleGroups}
+        >
+          Você está cadastrado em ${} grupos, para informações detalhadas vá
+          para grupos.
+        </Card>
       </DivCards>
     </Container>
   );
