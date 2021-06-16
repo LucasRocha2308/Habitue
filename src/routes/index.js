@@ -8,6 +8,7 @@ import Habit from "../pages/Habit";
 import Group from "../pages/Group";
 import RegisterHabit from "../pages/RegisterHabit";
 import RegisterGroup from "../pages/RegisterGroup";
+import RegisterGoal from "../pages/RegisterGoal";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route path="/registergroup" component={RegisterGroup} isPrivate />
       <Route path="/habit" component={Habit} isPrivate />
       <Route path="/group" component={Group} isPrivate />
+      <Route path="/resgistergoal" component={RegisterGoal} isPrivate />
     </Switch>
   );
 };
