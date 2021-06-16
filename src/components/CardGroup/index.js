@@ -1,11 +1,21 @@
 import { BntRemove, CardStyle, FlexCard, Bnt } from "./style";
+import { useState } from "react";
 import { useGroups } from "../../providers/groups";
 import { ButtonWhite } from "../Button";
 import { useHistory } from "react-router-dom";
-
+import TransitionsModalGroup from "../ModalGroup";
 const CardGroup = () => {
   const history = useHistory();
   const { group, removeGroup } = useGroups();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const goTo = (path) => {
     history.push(path);
@@ -48,7 +58,12 @@ const CardGroup = () => {
               </pre>
             </div>
             <div>
-              <Bnt>Metas e Atividades</Bnt>
+              <TransitionsModalGroup
+                open={open}
+                handleClose={handleClose}
+                id={elem.id}
+              />
+              <Bnt onClick={handleOpen}>Metas e Atividades</Bnt>
             </div>
             <pre>
               {elem.users_on_group.length > 1
