@@ -55,7 +55,7 @@ const RegisterGroup = () => {
             type="text"
             name="description"
             placeholder="Descrição"
-            register={register}
+            // register={register}
             error={errors.description?.message}
             cols="23"
             rows="5"

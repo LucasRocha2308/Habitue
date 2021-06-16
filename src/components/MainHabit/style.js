@@ -11,7 +11,6 @@ export const BackCard = styled.div`
   font-size: 24px;
   padding: 20px;
   text-align: center;
-
   width: 90vw;
   height: 220px;
 

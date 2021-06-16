@@ -25,9 +25,10 @@ export const GroupsProvider = ({ children }) => {
       .catch((_) => {
         toast.error("Erro ao criar o grupo");
       });
+    callGroup();
   };
 
-  useEffect(() => {
+  const callGroup = () => {
     api
       .get("groups/personal/", {
         headers: {
@@ -36,10 +37,12 @@ export const GroupsProvider = ({ children }) => {
       })
       .then((res) => setGroup(res.data))
       .catch((err) => console.log(err));
+  };
 
+  useEffect(() => {
+    callGroup();
     // eslint-disable-next-line
   }, [auth]);
-  console.log(group);
 
   return (
     <GroupsContext.Provider value={{ group, setGroup, registerGroup }}>
