@@ -53,7 +53,7 @@ export default function TransitionsModalGroup({ open, handleClose, id }) {
                 <h2>Atividades</h2>
                 <div>
                   <div>Cadastre atividades ao grupo</div>
-                  <Bnt />
+                  <Bnt onClick={() => goTo("/registeractivities")} />
                 </div>
               </div>
             </ModalContent>
