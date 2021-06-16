@@ -30,7 +30,7 @@ export const GroupsProvider = ({ children }) => {
 
   const callGroup = () => {
     api
-      .get("groups/personal/", {
+      .get("groups/", {
         headers: {
           Authorization: "Bearer " + token,
         },
