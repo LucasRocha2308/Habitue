@@ -9,6 +9,7 @@ import Group from "../pages/Group";
 import RegisterHabit from "../pages/RegisterHabit";
 import RegisterGroup from "../pages/RegisterGroup";
 import RegisterGoal from "../pages/RegisterGoal";
+import RegisterActivities from "../pages/RegisterActivities";
 
 const Routes = () => {
   return (
@@ -22,6 +23,11 @@ const Routes = () => {
       <Route path="/habit" component={Habit} isPrivate />
       <Route path="/group" component={Group} isPrivate />
       <Route path="/registergoal" component={RegisterGoal} isPrivate />
+      <Route
+        path="/registeractivities"
+        component={RegisterActivities}
+        isPrivate
+      />
     </Switch>
   );
 };
