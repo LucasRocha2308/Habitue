@@ -17,7 +17,7 @@ export const CardStyle = styled.div`
   justify-content: space-around;
   align-items: center;
   position: relative;
-  padding: 15px 0;
+  padding: 15px;
 
   h2 {
     color: var(--green);
@@ -42,7 +42,7 @@ export const CardStyle = styled.div`
     line-height: 28px;
     text-align: justify;
     color: var(--gray);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px 0;
   }
@@ -81,12 +81,17 @@ export const BntRemove = styled.button`
   box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.57);
   border-radius: 20px;
   width: 20px;
+  margin-bottom: 50px;
   height: 20px;
 
   ::after {
     content: "X";
     color: #ffffff;
     backdrop-filter: blur(4px);
+  }
+
+  @media (min-width: 1100px) {
+    margin-bottom: 0;
   }
 `;
 export const Bnt = styled.button`
