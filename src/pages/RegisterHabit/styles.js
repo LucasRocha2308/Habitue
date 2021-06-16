@@ -17,11 +17,12 @@ export const ContainerRegister = styled.div`
   img {
     width: 300px;
     margin: 0 auto;
+    margin-top: 20px;
   }
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 50px;
     gap: 20px;
     img {
       margin: 0;

@@ -38,8 +38,11 @@ const Dashboard = () => {
             textButton="Hábitos"
             handleClick={handleHabits}
           >
-            Você tem {habit.length} hábitos cadastrados para informações
-            detalhadas vá para hábitos.
+            Você tem{" "}
+            {habit.length > 1
+              ? `${habit.length}  hábitos cadastrados`
+              : `${habit.length}  hábito cadastrado`}{" "}
+            para informações detalhadas vá para hábitos.
           </Card>
         )}
 
@@ -56,8 +59,11 @@ const Dashboard = () => {
             textButton="Grupos"
             handleClick={handleGroups}
           >
-            Você está cadastrado em ${group.length} , para informações
-            detalhadas vá para grupos.
+            Você está cadastrado em{" "}
+            {group.length > 1
+              ? `${group.length}  grupos`
+              : `${group.length}  grupo`}
+            , para informações detalhadas vá para grupos.
           </Card>
         )}
       </DivCards>
