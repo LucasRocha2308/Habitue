@@ -21,11 +21,11 @@ export const HabitsProvider = ({ children }) => {
       .then((_) => {
         toast.success("Sucesso ao criar um hábito");
         history.push("/dashboard");
+        callHabits();
       })
       .catch((_) => {
         toast.error("Erro ao criar um hábito");
       });
-    callHabits();
   };
 
   const callHabits = () => {
@@ -43,7 +43,6 @@ export const HabitsProvider = ({ children }) => {
     callHabits();
     // eslint-disable-next-line
   }, [auth]);
-  console.log(habit);
 
   const removeHabit = (id) => {
     api.delete(`habits/${id}/`, {
