@@ -35,7 +35,10 @@ export const HabitsProvider = ({ children }) => {
           Authorization: "Bearer " + token,
         },
       })
-      .then((res) => setHabit(res.data))
+      .then((res) => {
+        const list = res.data.filter((elem) => !elem.achieved);
+        setHabit(list);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -54,8 +57,30 @@ export const HabitsProvider = ({ children }) => {
     setHabit(newList);
   };
 
+  const checkHabit = (habit) => {
+    api
+      .patch(
+        `habits/${habit.id}/`,
+        { achieved: true },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
+      .then((_) => {
+        toast.success("Sucesso ao completar um hábito");
+        callHabits();
+      })
+      .catch((_) => {
+        toast.error("Erro ao completar um hábito");
+      });
+  };
+
   return (
-    <HabitsContext.Provider value={{ habit, removeHabit, registerHabit }}>
+    <HabitsContext.Provider
+      value={{ habit, removeHabit, registerHabit, checkHabit }}
+    >
       {children}
     </HabitsContext.Provider>
   );
