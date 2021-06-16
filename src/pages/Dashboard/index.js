@@ -3,12 +3,13 @@ import Card from "../../components/Card";
 import HeaderPages from "../../components/HeaderPages";
 import { useUser } from "../../providers/user";
 import { useHabits } from "../../providers/habits";
-
 import { DivCards, StyledH1, Container } from "./styles";
+import { useGroups } from "../../providers/groups";
 
 const Dashboard = () => {
   const { user } = useUser();
   const { habit } = useHabits();
+  const { group } = useGroups();
 
   const history = useHistory();
   const handleHabits = () => {
@@ -32,21 +33,39 @@ const Dashboard = () => {
             handleClick={handleHabits}
           />
         ) : (
-          // <Card
-          //   valueTitle="Hábitos"
-          //   valueDescription="Voce tem 10 habitos"
-          //   textButton="Hábitos"
-          //   handleClick={handleHabits}
-          // />
-          <div>{habit.length}</div>
+          <Card
+            valueTitle="Hábitos"
+            textButton="Hábitos"
+            handleClick={handleHabits}
+          >
+            Você tem{" "}
+            {habit.length > 1
+              ? `${habit.length}  hábitos cadastrados`
+              : `${habit.length}  hábito cadastrado`}{" "}
+            para informações detalhadas vá para hábitos.
+          </Card>
         )}
 
-        <Card
-          valueTitle="Grupos"
-          valueDescription="Ainda não está buscando o milhão? Cadastre no grupo para colocar suas metas."
-          textButton="Grupos"
-          handleClick={handleGroups}
-        />
+        {!group.length ? (
+          <Card
+            valueTitle="Grupos"
+            valueDescription="Ainda não está buscando o milhão? Cadastre no grupo para colocar suas metas."
+            textButton="Grupos"
+            handleClick={handleGroups}
+          />
+        ) : (
+          <Card
+            valueTitle="Grupos"
+            textButton="Grupos"
+            handleClick={handleGroups}
+          >
+            Você está cadastrado em{" "}
+            {group.length > 1
+              ? `${group.length}  grupos`
+              : `${group.length}  grupo`}
+            , para informações detalhadas vá para grupos.
+          </Card>
+        )}
       </DivCards>
     </Container>
   );

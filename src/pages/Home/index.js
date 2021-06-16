@@ -21,7 +21,7 @@ const Home = () => {
       <Header />
       <DivHome>
         <div>
-          <h2>Criei o hábito de se organizar financeiramente</h2>
+          <h2>Crie o hábito de se organizar financeiramente</h2>
           <ButtonGreen onClick={handleOpen}>Saiba mais</ButtonGreen>
           <TransitionsModal
             open={open}

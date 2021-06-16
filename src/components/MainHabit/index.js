@@ -14,8 +14,7 @@ const MainHabit = () => {
 
   return (
     <>
-      {console.log(habit)}
-      {habit.length > 0 ? (
+      {habit.length ? (
         <CardHabit />
       ) : (
         <BackCard>

@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  .textarea {
+    padding: 15px 0 100px 0;
+  }
 
   .button {
     width: 100px;
@@ -17,12 +20,11 @@ export const ContainerRegister = styled.div`
   img {
     width: 300px;
     margin: 0 auto;
-    margin-top: 20px;
   }
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     gap: 20px;
     img {
       margin: 0;

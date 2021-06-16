@@ -20,29 +20,67 @@ export const HabitsProvider = ({ children }) => {
       })
       .then((_) => {
         toast.success("Sucesso ao criar um hábito");
-        return history.push("/dashboard");
+        history.push("/dashboard");
+        callHabits();
       })
       .catch((_) => {
         toast.error("Erro ao criar um hábito");
       });
   };
 
-  useEffect(() => {
+  const callHabits = () => {
     api
       .get("habits/personal/", {
         headers: {
           Authorization: "Bearer " + token,
         },
       })
-      .then((res) => setHabit(res.data))
+      .then((res) => {
+        const list = res.data.filter((elem) => !elem.achieved);
+        setHabit(list);
+      })
       .catch((err) => console.log(err));
+  };
 
+  useEffect(() => {
+    callHabits();
     // eslint-disable-next-line
   }, [auth]);
-  console.log(habit);
+
+  const removeHabit = (id) => {
+    api.delete(`habits/${id}/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    const newList = habit.filter((elem) => elem.id !== id);
+    setHabit(newList);
+  };
+
+  const checkHabit = (habit) => {
+    api
+      .patch(
+        `habits/${habit.id}/`,
+        { achieved: true },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
+      .then((_) => {
+        toast.success("Sucesso ao completar um hábito");
+        callHabits();
+      })
+      .catch((_) => {
+        toast.error("Erro ao completar um hábito");
+      });
+  };
 
   return (
-    <HabitsContext.Provider value={{ habit, setHabit, registerHabit }}>
+    <HabitsContext.Provider
+      value={{ habit, removeHabit, registerHabit, checkHabit }}
+    >
       {children}
     </HabitsContext.Provider>
   );

@@ -3,8 +3,11 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import menu from "../../images/menu-burguer.svg";
+import { useHistory } from "react-router-dom";
 
 export default function MenuBurguer() {
+  const history = useHistory();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -13,6 +16,21 @@ export default function MenuBurguer() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const goTo = (path) => {
+    history.push(path);
+  };
+
+  const btnFunction = (path) => {
+    handleClose();
+    goTo(path);
+  };
+
+  const handlerLogout = () => {
+    handleClose();
+    localStorage.clear();
+    document.location.reload();
   };
 
   return (
@@ -31,9 +49,9 @@ export default function MenuBurguer() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Hábitos</MenuItem>
-        <MenuItem onClick={handleClose}>Grupos</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={() => btnFunction("/habit")}>Hábitos</MenuItem>
+        <MenuItem onClick={() => btnFunction("/group")}>Grupos</MenuItem>
+        <MenuItem onClick={handlerLogout}>Logout</MenuItem>
       </Menu>
     </div>
   );

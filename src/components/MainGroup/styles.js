@@ -34,25 +34,15 @@ export const CardsContainer = styled.div`
     line-height: 75px;
     font-feature-settings: "kern" off;
   }
-  div {
-    display: flex;
-    flex-direction: column;
-  }
+
   @media only screen and (min-width: 768px) {
     width: 500px;
     padding: 100px;
-    div {
-      flex-direction: row;
-      margin: 0 auto;
-      width: 100%;
-      justify-content: space-between;
-    }
   }
 `;
 
 export const Container = styled.div`
   background-color: var(--gray);
-  min-height: 100vh;
 `;
 export const StyledH1 = styled.h1`
   text-align: center;
