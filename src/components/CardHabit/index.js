@@ -2,10 +2,11 @@ import { BntRemove, CardStyle, FlexCard } from "./style";
 import { useHabits } from "../../providers/habits";
 import { ButtonWhite } from "../Button";
 import { useHistory } from "react-router-dom";
+import { FaCheckCircle } from "react-icons/all";
 
 const CardHabit = () => {
   const history = useHistory();
-  const { habit, removeHabit } = useHabits();
+  const { habit, removeHabit, checkHabit } = useHabits();
 
   const goTo = (path) => {
     history.push(path);
@@ -26,6 +27,7 @@ const CardHabit = () => {
             <p>{elem.frequency}</p>
             <label>Quantos pontos vale</label>
             <p>{elem.how_much_achieved}</p>
+            <FaCheckCircle onClick={() => checkHabit(elem)} />
           </CardStyle>
         );
       })}
