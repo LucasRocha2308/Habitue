@@ -7,13 +7,14 @@ export const CardStyle = styled.div`
   background: #6adb7e;
   margin: 20px auto;
   width: 180px;
-  height: 300px;
+  height: 320px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
   padding: 20px 0;
+  align-items: center;
 
   h2 {
     color: var(--gray);
@@ -30,6 +31,17 @@ export const CardStyle = styled.div`
   & > label {
     color: var(--dark-green);
     margin-top: 5px;
+  }
+
+  svg {
+    color: var(--gray);
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  svg:hover {
+    border-radius: 100%;
+    box-shadow: var(--dark-green) 0 0 2px 2px;
   }
 `;
 
