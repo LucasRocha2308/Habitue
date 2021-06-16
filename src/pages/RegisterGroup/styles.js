@@ -3,16 +3,10 @@ import styled from "styled-components";
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  textarea {
-    padding: 5px 0px 5px 5px;
-    border: 1px solid var(--green-header);
-    border-radius: 3px;
-    margin: 10px auto;
+  .textarea {
+    padding: 15px 0 100px 0;
   }
 
-  textarea::placeholder {
-    color: var(--green);
-  }
   .button {
     width: 100px;
     margin: 0 auto;

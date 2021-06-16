@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
+import TextArea from "../../components/TextArea";
 import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "./styles";
 import { useHistory } from "react-router-dom";
@@ -15,7 +16,7 @@ const RegisterGroup = () => {
   const { registerGroup } = useGroups();
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
-    difficulty: yup.string().required("Campo obrigatório!"),
+    description: yup.string().required("Campo obrigatório!"),
     category: yup.string().required("Campo obrigatório!"),
   });
   const {
@@ -51,14 +52,12 @@ const RegisterGroup = () => {
             register={register}
             error={errors.category?.message}
           />
-          <textarea
+          <TextArea
             type="text"
             name="description"
             placeholder="Descrição"
-            // register={register}
+            register={register}
             error={errors.description?.message}
-            cols="23"
-            rows="5"
           />
 
           <ButtonWhite className="button" type="submit">

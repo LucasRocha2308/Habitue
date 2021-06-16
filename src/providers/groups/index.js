@@ -20,17 +20,17 @@ export const GroupsProvider = ({ children }) => {
       })
       .then((_) => {
         toast.success("Sucesso ao criar um grupo");
-        return history.push("/dashboard");
+        history.push("/dashboard");
+        callGroup();
       })
       .catch((_) => {
         toast.error("Erro ao criar o grupo");
       });
-    callGroup();
   };
 
   const callGroup = () => {
     api
-      .get("groups/", {
+      .get("groups/subscriptions/", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -43,9 +43,20 @@ export const GroupsProvider = ({ children }) => {
     callGroup();
     // eslint-disable-next-line
   }, [auth]);
+  const removeGroup = (id) => {
+    api.delete(`groups/${id}/unsubscribe/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    const newList = group.filter((elem) => elem.id !== id);
+    setGroup(newList);
+  };
 
   return (
-    <GroupsContext.Provider value={{ group, setGroup, registerGroup }}>
+    <GroupsContext.Provider
+      value={{ group, setGroup, registerGroup, removeGroup }}
+    >
       {children}
     </GroupsContext.Provider>
   );
