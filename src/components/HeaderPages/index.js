@@ -24,7 +24,6 @@ const HeaderPages = () => {
         <MenuBurguer />
       </div>
       <div className="div-buttons">
-        <ButtonWhite onClick={() => goTo("/")}>Home</ButtonWhite>
         <ButtonWhite onClick={() => goTo("/habit")}>Hábitos</ButtonWhite>
         <ButtonWhite onClick={() => goTo("/group")}>Grupos</ButtonWhite>
         <ButtonGreen onClick={handlerLogout}>Logout</ButtonGreen>
