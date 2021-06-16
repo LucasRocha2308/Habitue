@@ -78,7 +78,6 @@ export const FlexCard = styled.div`
 export const BntRemove = styled.button`
   background: var(--gray);
   border: 1px solid #000000;
-  box-sizing: border-box;
   box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.57);
   border-radius: 20px;
   width: 20px;

@@ -7,8 +7,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "../RegisterHabit/styles";
+import { useGroups } from "../../providers/groups";
 
 const RegisterGoal = () => {
+  const { registerGoals } = useGroups();
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     difficulty: yup.string().required("Campo obrigatório!"),
@@ -21,8 +23,7 @@ const RegisterGoal = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    // data.group = parseInt();
-    console.log(data);
+    registerGoals(data);
   };
 
   return (
