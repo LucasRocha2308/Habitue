@@ -50,11 +50,15 @@ export const HabitsProvider = ({ children }) => {
   }, [auth]);
 
   const removeHabit = (id) => {
-    api.delete(`habits/${id}/`, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+    api
+      .delete(`habits/${id}/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((_) => {
+        toast.success("Hábito removido com sucesso");
+      });
     const newList = habit.filter((elem) => elem.id !== id);
     setHabit(newList);
   };

@@ -5,8 +5,8 @@ export const CardStyle = styled.div`
   box-shadow: -1px 4px 4px 1px #5cc170;
   border-radius: 10px;
   background: #6adb7e;
-  margin: 20px auto;
   width: 180px;
+
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -47,18 +47,26 @@ export const CardStyle = styled.div`
 export const FlexCard = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  & > button {
-    position: fixed;
-    bottom: 20px;
-    left: 30%;
-    padding: 0, 30px;
-    transform: translate(-50%);
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+  padding: 0;
+  @media only screen and (min-width: 780px) {
+    padding: 0 80px;
+    justify-content: flex-start;
   }
+`;
 
-  & > button:last-of-type {
-    bottom: 20px;
-    left: 70%;
+export const ContainerButton = styled.div`
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 10px;
+  gap: 10px;
+  justify-content: space-between;
+  @media only screen and (min-width: 1100px) {
+    justify-content: center;
+    gap: 50px;
   }
 `;
 
@@ -72,7 +80,7 @@ export const BntRemove = styled.button`
   height: 20px;
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 150px;
   ::after {
     content: "X";
     color: #ffffff;

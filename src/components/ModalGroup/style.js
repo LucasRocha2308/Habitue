@@ -25,13 +25,14 @@ export const Container = styled.div`
   background: var(--green);
   border-radius: 10px;
   border: 2 solid var(--gray);
-  overflow-y: scroll;
+  overflow-x: scroll;
 
   h2 {
     color: var(--gray);
     font-style: italic;
+    margin: 0 auto;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 20px;
     text-align: center;
     text-shadow: 0px 0px 8px var(--green-header);
     padding-top: 10px;
@@ -42,9 +43,10 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  padding: 0 50px;
+  width: 500px;
 
-  gap h3 {
+  h3 {
     text-align: center;
     font-weight: bold;
     font-size: 24px;

@@ -16,7 +16,7 @@ const RegisterGoal = () => {
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     difficulty: yup.string().required("Campo obrigatório!"),
-    how_much_achieved: yup.number().required("Campo obrigatório!"),
+    how_much_achieved: yup.string().required("Campo obrigatório!"),
   });
   const {
     register,

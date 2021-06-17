@@ -1,29 +1,50 @@
 import styled from "styled-components";
-
-export const BackCard = styled.div`
-  background-color: rgba(106, 219, 126, 0.3);
-  border-radius: 11px;
-  margin: 50px auto;
+import backgroundGroup from "../../images/habit.svg";
+export const DivCards = styled.div`
   display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 24px;
-  padding: 20px;
+  flex-direction: column;
+  background-image: url(${backgroundGroup});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 100px;
+    justify-content: center;
+  }
+`;
+export const CardsContainer = styled.div`
+  background-image: linear-gradient(
+    160deg,
+    var(--dark-green) 0%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  box-sizing: border-box;
-  width: 90vw;
-  height: 220px;
-
-  @media (min-width: 600px) {
-    max-width: 870px;
-    height: 300px;
+  width: 300px;
+  gap: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 40px;
+  p {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    font-feature-settings: "kern" off;
   }
 
-  button {
-    width: 80px;
-    font-size: 12px;
-    border-radius: 12px;
-    margin: 20px;
+  @media only screen and (min-width: 768px) {
+    width: 500px;
+    padding: 100px;
   }
+`;
+
+export const Container = styled.div`
+  background-color: var(--gray);
+`;
+export const StyledH1 = styled.h1`
+  text-align: center;
+  margin: 20px 0;
 `;

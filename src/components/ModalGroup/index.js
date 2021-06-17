@@ -30,7 +30,12 @@ export default function TransitionsModalGroup({ open, handleClose }) {
   const goTo = (path) => {
     history.push(path);
   };
-
+  function format(str) {
+    let dth = str.split("T");
+    let data = dth[0].split("-").reverse().join("/");
+    let hora = dth[1].split(":").slice(0, 2).join(":");
+    return data + "-" + hora;
+  }
   return (
     <>
       <Modal
@@ -75,7 +80,7 @@ export default function TransitionsModalGroup({ open, handleClose }) {
                       <Content key={activities.id}>
                         <h3>{activities.title}</h3>
                         <h4>data e hora</h4>
-                        <p>{activities.realization_time}</p>
+                        <p>{format(activities.realization_time)}</p>
                       </Content>
                     );
                   })
