@@ -13,10 +13,10 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const schema = yup.object().shape({
-    username: yup.string().required("Campo obrigatório"),
+    username: yup.string().required("Campo obrigatório!"),
     password: yup
       .string()
-      .min(6, "Mínimo de 6 dígitos")
+      .min(6, "Mínimo de 6 dígitos!")
       .required("Campo obrigatório!"),
     passwordConfirm: yup
       .string()
@@ -59,6 +59,7 @@ const Register = () => {
               name="username"
               label="Usuário"
               error={errors.username?.message}
+              placeholder="Digite o usuário"
             />
             <div>
               <Input
@@ -68,6 +69,7 @@ const Register = () => {
                 label="Senha"
                 register={register}
                 error={errors.password?.message}
+                placeholder="Mínimo de 6 dígitos"
               />
               <Input
                 type="password"
@@ -76,6 +78,7 @@ const Register = () => {
                 label="Confirme senha"
                 register={register}
                 error={errors.passwordConfirm?.message}
+                placeholder="Mínimo de 6 dígitos"
               />
             </div>
             <Input
@@ -84,6 +87,7 @@ const Register = () => {
               label="Email"
               register={register}
               error={errors.email?.message}
+              placeholder="Digite seu e-mail"
             />
             <ButtonGreen>Cadastrar</ButtonGreen>
             <h4>
