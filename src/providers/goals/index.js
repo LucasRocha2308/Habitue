@@ -49,7 +49,7 @@ export const GoalProvider = ({ children }) => {
   }, [groupId]);
 
   return (
-    <GoalContext.Provider value={{ registerGoals, goal, setGroupId }}>
+    <GoalContext.Provider value={{ groupId, registerGoals, goal, setGroupId }}>
       {children}
     </GoalContext.Provider>
   );
