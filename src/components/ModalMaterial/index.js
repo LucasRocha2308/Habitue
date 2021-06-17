@@ -46,49 +46,90 @@ export default function TransitionsModal({ open, handleClose }) {
                 que nos cercam não davam a devida atenção a sua organização
                 financeira, isso resultou em problemas muito maiores do que
                 poderiam acontecer. Essa aplicação visa auxiliar os seus
-                usuários na sua organização financeira
+                usuários na sua organização.
               </p>
               <div>
                 <button>
-                  <span>Daniel</span>
                   <div>
-                    <a href="https://www.linkedin.com/in/daniel-epichin-pena/">
+                    <span>Daniel</span>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/in/daniel-epichin-pena/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillLinkedin />
                     </a>
-                    <a href="https://gitlab.com/daniel_epichin_pena">
+                    <a
+                      href="https://gitlab.com/daniel_epichin_pena"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillGitlab />
                     </a>
                   </div>
                 </button>
                 <button>
-                  <span>Itallo</span>
                   <div>
-                    <a href="https://www.linkedin.com/in/itallo-dornelas/">
+                    <span>Itallo</span>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/in/itallo-dornelas/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillLinkedin />
                     </a>
-                    <a href="https://gitlab.com/Itallo_Dornelas">
+                    <a
+                      href="https://gitlab.com/Itallo_Dornelas"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillGitlab />
                     </a>
                   </div>
                 </button>
                 <button>
-                  <span>Kelsiane</span>
                   <div>
-                    <a href="https://www.linkedin.com/in/kelsianelima/">
+                    <span>Kelsiane</span>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/in/kelsianelima/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillLinkedin />
                     </a>
-                    <a href="https://gitlab.com/Kelsiane">
+                    <a
+                      href="https://gitlab.com/Kelsiane"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillGitlab />
                     </a>
                   </div>
                 </button>
                 <button>
-                  <span>Lucas</span>
                   <div>
-                    <a href="https://www.linkedin.com/in/lucas-rocha-da-silva-530618149/">
+                    <span>Lucas</span>
+                  </div>
+
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/in/lucas-rocha-da-silva-530618149/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillLinkedin />
                     </a>
-                    <a href="https://gitlab.com/LucasRocha2308">
+                    <a
+                      href="https://gitlab.com/LucasRocha2308"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <AiFillGitlab />
                     </a>
                   </div>

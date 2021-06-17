@@ -7,8 +7,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "./styles";
+import { useActivitie } from "../../providers/activities";
+import { useHistory } from "react-router-dom";
 
 const RegisterActivities = () => {
+  const { registerActivitie } = useActivitie();
+  const history = useHistory();
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     realization_time: yup.string().required("Campo obrigatório!"),
@@ -20,8 +24,7 @@ const RegisterActivities = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    // data.group = parseInt();
-    console.log(data);
+    registerActivitie(data, history);
   };
 
   return (
@@ -32,13 +35,13 @@ const RegisterActivities = () => {
           <StyledH1>Registro de Atividades</StyledH1>
           <Input
             name="title"
-            placeholder="Título da meta"
+            placeholder="Título da Atividade"
             register={register}
             error={errors.title?.message}
           />
 
           <Input
-            type="text"
+            type="datetime-local"
             name="realization_time"
             placeholder="Data da realização"
             register={register}

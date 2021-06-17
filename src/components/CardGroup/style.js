@@ -23,7 +23,7 @@ export const CardStyle = styled.div`
     color: var(--green);
     font-style: italic;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 28px;
     line-height: 42px;
     text-align: center;
     text-shadow: 0px 0px 8px var(--green-header);
@@ -60,18 +60,23 @@ export const CardStyle = styled.div`
 export const FlexCard = styled.div`
   display: flex;
   flex-wrap: wrap;
-  min-height: 100vh;
-  & > button {
-    position: fixed;
-    bottom: 20px;
-    left: 30%;
-    padding: 0, 30px;
-    transform: translate(-50%);
-  }
+  width: 100%;
+  justify-content: center;
 
-  & > button:last-of-type {
-    bottom: 20px;
-    left: 70%;
+  @media only screen and (min-width: 780px) {
+    justify-content: flex-start;
+  }
+`;
+export const ContainerButton = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 10px;
+  gap: 10px;
+  justify-content: space-between;
+  @media only screen and (min-width: 1100px) {
+    justify-content: center;
+    gap: 50px;
   }
 `;
 

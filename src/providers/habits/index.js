@@ -43,16 +43,22 @@ export const HabitsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    callHabits();
+    if (auth) {
+      callHabits();
+    }
     // eslint-disable-next-line
   }, [auth]);
 
   const removeHabit = (id) => {
-    api.delete(`habits/${id}/`, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+    api
+      .delete(`habits/${id}/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((_) => {
+        toast.success("Hábito removido com sucesso");
+      });
     const newList = habit.filter((elem) => elem.id !== id);
     setHabit(newList);
   };

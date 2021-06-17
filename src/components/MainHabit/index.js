@@ -1,5 +1,5 @@
 import { ButtonWhite } from "../Button";
-import { BackCard } from "./style";
+import { Container, StyledH1, DivCards, CardsContainer } from "./style";
 import { useHabits } from "../../providers/habits";
 import { useHistory } from "react-router-dom";
 import CardHabit from "../CardHabit";
@@ -13,21 +13,24 @@ const MainHabit = () => {
   };
 
   return (
-    <>
-      {habit.length ? (
-        <CardHabit />
+    <Container>
+      <StyledH1>Hábitos</StyledH1>
+      {!habit.length ? (
+        <DivCards>
+          <CardsContainer>
+            <p>
+              Ainda não cadastrou nenhum hábito? Cadastre clicando nos botão
+              abaixo.
+            </p>
+            <ButtonWhite onClick={() => goTo("/registerhabit")}>
+              Cadastrar Hábito
+            </ButtonWhite>
+          </CardsContainer>
+        </DivCards>
       ) : (
-        <BackCard>
-          <p>
-            Ainda não cadastrou seu hábito, cadastre clicando no botão abaixo.
-          </p>
-          <ButtonWhite onClick={() => goTo("/registerhabit")}>
-            Cadastrar <br />
-            Hábitos
-          </ButtonWhite>
-        </BackCard>
+        <CardHabit />
       )}
-    </>
+    </Container>
   );
 };
 

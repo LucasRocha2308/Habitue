@@ -37,41 +37,32 @@ export const GroupsProvider = ({ children }) => {
       })
       .then((res) => setGroup(res.data))
       .catch((err) => console.log(err));
-    localStorage.setItem("@Habitue:idGroups", group.id);
   };
 
   useEffect(() => {
-    callGroup();
+    if (auth) {
+      callGroup();
+    }
     // eslint-disable-next-line
   }, [auth]);
   const removeGroup = (id) => {
-    api.delete(`groups/${id}/unsubscribe/`, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
-
-    const newList = group.filter((elem) => elem.id !== id);
-    setGroup(newList);
-  };
-
-  const registerGoals = (data) => {
     api
-      .post("goals/", data, {
+      .delete(`groups/${id}/unsubscribe/`, {
         headers: {
           Authorization: "Bearer " + token,
         },
       })
       .then((_) => {
-        toast.success("Sucesso ao criar uma Meta");
-      })
-      .catch((err) => console.log(err));
+        toast.success("Sucesso ao deletar o grupo");
+      });
+
+    const newList = group.filter((elem) => elem.id !== id);
+    setGroup(newList);
   };
 
-  console.log(group[0]);
   return (
     <GroupsContext.Provider
-      value={{ group, setGroup, registerGroup, removeGroup, registerGoals }}
+      value={{ group, setGroup, registerGroup, removeGroup }}
     >
       {children}
     </GroupsContext.Provider>

@@ -1,16 +1,21 @@
-import { BntRemove, CardStyle, FlexCard, Bnt } from "./style";
+import { BntRemove, CardStyle, FlexCard, Bnt, ContainerButton } from "./style";
 import { useState } from "react";
 import { useGroups } from "../../providers/groups";
 import { ButtonWhite } from "../Button";
 import { useHistory } from "react-router-dom";
 import TransitionsModalGroup from "../ModalGroup";
+import { useGoal } from "../../providers/goals";
+import { TiArrowBack } from "react-icons/all";
 const CardGroup = () => {
   const history = useHistory();
   const { group, removeGroup } = useGroups();
   const [open, setOpen] = useState(false);
+  const { setGroupId } = useGoal();
 
-  const handleOpen = () => {
+  const handleOpen = (id) => {
     setOpen(true);
+    localStorage.setItem(`@Habitue:Group`, id);
+    setGroupId(id);
   };
 
   const handleClose = () => {
@@ -28,8 +33,8 @@ const CardGroup = () => {
           <CardStyle key={elem.id}>
             <div>
               <h2>
-                {elem.name.length > 15
-                  ? `${elem.name.substring(0, 15)}...`
+                {elem.name.length > 8
+                  ? `${elem.name.substring(0, 8)}...`
                   : elem.name}
               </h2>
             </div>
@@ -58,12 +63,8 @@ const CardGroup = () => {
               </pre>
             </div>
             <div>
-              <TransitionsModalGroup
-                open={open}
-                handleClose={handleClose}
-                id={elem.id}
-              />
-              <Bnt onClick={handleOpen}>Metas e Atividades</Bnt>
+              <TransitionsModalGroup open={open} handleClose={handleClose} />
+              <Bnt onClick={() => handleOpen(elem.id)}>Metas e Atividades</Bnt>
             </div>
             <pre>
               {elem.users_on_group.length > 1
@@ -74,10 +75,15 @@ const CardGroup = () => {
           </CardStyle>
         );
       })}
-      <ButtonWhite onClick={() => goTo("/registergroup")}>
-        Cadastrar Grupo
-      </ButtonWhite>
-      <ButtonWhite onClick={() => goTo("/")}>Home Page</ButtonWhite>
+      <ContainerButton>
+        <ButtonWhite onClick={() => goTo("/")}>
+          <TiArrowBack />
+          Home Page
+        </ButtonWhite>
+        <ButtonWhite onClick={() => goTo("/registergroup")}>
+          Cadastrar Grupo
+        </ButtonWhite>
+      </ContainerButton>
     </FlexCard>
   );
 };

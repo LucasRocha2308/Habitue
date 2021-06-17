@@ -3,21 +3,21 @@ import { createContext, useContext } from "react";
 import { toast } from "react-toastify";
 import api from "../../services/api";
 import { useAuth } from "../auth";
-const GoalContext = createContext();
+const ActivitiesContext = createContext();
 
-export const GoalProvider = ({ children }) => {
+export const ActivitieProvider = ({ children }) => {
   const token = localStorage.getItem("@Habitue:token");
-  const [goal, setGoal] = useState([]);
+  const [activitie, setActivitie] = useState([]);
   const { auth } = useAuth();
   const [groupId, setGroupId] = useState(
     localStorage.getItem(`@Habitue:Group`)
   );
 
-  const registerGoals = (data, history) => {
+  const registerActivitie = (data, history) => {
     setGroupId(localStorage.getItem(`@Habitue:Group`));
     api
       .post(
-        "goals/",
+        "activities/",
         { ...data, group: parseInt(groupId) },
         {
           headers: {
@@ -28,31 +28,34 @@ export const GoalProvider = ({ children }) => {
       .then((_) => {
         toast.success("Sucesso ao criar uma Meta");
         history.push("/group");
-        callGoal();
+        callActivitie();
       })
-      .catch((_) => toast.error("Quantidade de caracteres excedida"));
+      .catch((err) => console.log(err));
   };
-  const callGoal = () => {
+  const callActivitie = () => {
     api
-      .get(`goals/?group=${groupId}&page=1`, {
+      .get(`activities/?group=${groupId}&page=1`, {
         headers: {
           Authorization: "Bearer " + token,
         },
       })
-      .then((res) => setGoal(res.data.results));
+      .then((res) => setActivitie(res.data.results))
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     if (auth) {
-      callGoal();
+      callActivitie();
     }
     // eslint-disable-next-line
   }, [groupId]);
 
   return (
-    <GoalContext.Provider value={{ registerGoals, goal, setGroupId }}>
+    <ActivitiesContext.Provider
+      value={{ registerActivitie, activitie, setGroupId }}
+    >
       {children}
-    </GoalContext.Provider>
+    </ActivitiesContext.Provider>
   );
 };
 
-export const useGoal = () => useContext(GoalContext);
+export const useActivitie = () => useContext(ActivitiesContext);

@@ -39,10 +39,23 @@ export const ModalContent = styled.div`
     flex-wrap: wrap;
     flex-direction: column;
     align-items: space-around;
+    cursor: auto;
+    div {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding-bottom: 5px;
+      span {
+        font-size: 14px;
+        /* display: flex;
+        align-items: center; */
+      }
+    }
   }
-  span {
-    font-size: 14px;
+  a {
+    cursor: pointer;
   }
+
   svg {
     font-size: 22px;
   }

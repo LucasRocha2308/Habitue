@@ -16,11 +16,13 @@ export default createGlobalStyle`
         }
         
         
-
+html,body{
+    min-height: 100vh;
+}
         
     body{
         background: var(--green);
-        color: var(--white);        
+        color: var(--white);      
     }
     body,input, button{
         font-family: 'Roboto', sans-serif;
