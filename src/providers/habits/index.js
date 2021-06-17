@@ -43,7 +43,9 @@ export const HabitsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    callHabits();
+    if (auth) {
+      callHabits();
+    }
     // eslint-disable-next-line
   }, [auth]);
 

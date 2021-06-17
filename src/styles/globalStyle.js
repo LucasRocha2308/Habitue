@@ -20,7 +20,7 @@ export default createGlobalStyle`
         
     body{
         background: var(--green);
-        color: var(--white);        
+        color: var(--white);      
     }
     body,input, button{
         font-family: 'Roboto', sans-serif;

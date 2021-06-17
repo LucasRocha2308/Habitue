@@ -40,7 +40,9 @@ export const GroupsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    callGroup();
+    if (auth) {
+      callGroup();
+    }
     // eslint-disable-next-line
   }, [auth]);
   const removeGroup = (id) => {
