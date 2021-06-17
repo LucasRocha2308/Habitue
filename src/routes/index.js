@@ -10,6 +10,7 @@ import RegisterHabit from "../pages/RegisterHabit";
 import RegisterGroup from "../pages/RegisterGroup";
 import RegisterGoal from "../pages/RegisterGoal";
 import RegisterActivities from "../pages/RegisterActivities";
+import SubscribeGroup from "../pages/SubscribeGroup";
 
 const Routes = () => {
   return (
@@ -23,6 +24,8 @@ const Routes = () => {
       <Route path="/habit" component={Habit} isPrivate />
       <Route path="/group" component={Group} isPrivate />
       <Route path="/registergoal" component={RegisterGoal} isPrivate />
+      <Route path="/subscribegroup" component={SubscribeGroup} isPrivate />
+
       <Route
         path="/registeractivities"
         component={RegisterActivities}
