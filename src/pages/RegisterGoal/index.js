@@ -7,10 +7,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import { Container, StyledH1 } from "../Dashboard/styles";
 import { ContainerRegister, Form } from "../RegisterHabit/styles";
-import { useGroups } from "../../providers/groups";
+import { useGoal } from "../../providers/goals";
+import { useHistory } from "react-router-dom";
 
 const RegisterGoal = () => {
-  const { registerGoals } = useGroups();
+  const history = useHistory();
+  const { registerGoals } = useGoal();
   const schema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     difficulty: yup.string().required("Campo obrigatório!"),
@@ -23,7 +25,7 @@ const RegisterGoal = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
-    registerGoals(data);
+    registerGoals(data, history);
   };
 
   return (
@@ -60,7 +62,6 @@ const RegisterGoal = () => {
             Registrar
           </ButtonWhite>
         </Form>
-        {/* <img src={imgFormGoal} alt="img-goal" /> */}
       </ContainerRegister>
     </Container>
   );

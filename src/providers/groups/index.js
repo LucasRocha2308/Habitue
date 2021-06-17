@@ -37,7 +37,6 @@ export const GroupsProvider = ({ children }) => {
       })
       .then((res) => setGroup(res.data))
       .catch((err) => console.log(err));
-    localStorage.setItem("@Habitue:idGroups", group.id);
   };
 
   useEffect(() => {
@@ -55,23 +54,9 @@ export const GroupsProvider = ({ children }) => {
     setGroup(newList);
   };
 
-  const registerGoals = (data) => {
-    api
-      .post("goals/", data, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then((_) => {
-        toast.success("Sucesso ao criar uma Meta");
-      })
-      .catch((err) => console.log(err));
-  };
-
-  console.log(group[0]);
   return (
     <GroupsContext.Provider
-      value={{ group, setGroup, registerGroup, removeGroup, registerGoals }}
+      value={{ group, setGroup, registerGroup, removeGroup }}
     >
       {children}
     </GroupsContext.Provider>

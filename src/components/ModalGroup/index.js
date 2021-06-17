@@ -5,6 +5,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { ModalWrapper, ModalContent, Bnt } from "./style";
 import { useHistory } from "react-router-dom";
+import { useGoal } from "../../providers/goals";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -20,9 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModalGroup({ open, handleClose, id }) {
+export default function TransitionsModalGroup({ open, handleClose }) {
   const classes = useStyles();
   const history = useHistory();
+  const { goal } = useGoal();
   const goTo = (path) => {
     history.push(path);
   };
@@ -47,12 +49,29 @@ export default function TransitionsModalGroup({ open, handleClose, id }) {
               <div>
                 <h2>Metas</h2>
                 <div>
-                  <div>Cadastre metas ao grupo</div>
+                  <div>
+                    {!goal.length ? (
+                      <h2>O grupo precisa de algumas metas </h2>
+                    ) : (
+                      goal.map((goals) => {
+                        return (
+                          <div>
+                            <p>{goals.title}</p>
+                            <p>{goals.difficulty}</p>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+
                   <Bnt onClick={() => goTo("/registergoal")} />
                 </div>
                 <h2>Atividades</h2>
                 <div>
-                  <div>Cadastre atividades ao grupo</div>
+                  <div>
+                    Cadastre atividades ao grupo
+                    {/* {activities} */}
+                  </div>
                   <Bnt onClick={() => goTo("/registeractivities")} />
                 </div>
               </div>

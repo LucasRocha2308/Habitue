@@ -4,13 +4,17 @@ import { useGroups } from "../../providers/groups";
 import { ButtonWhite } from "../Button";
 import { useHistory } from "react-router-dom";
 import TransitionsModalGroup from "../ModalGroup";
+import { useGoal } from "../../providers/goals";
 const CardGroup = () => {
   const history = useHistory();
   const { group, removeGroup } = useGroups();
   const [open, setOpen] = useState(false);
+  const { setGroupId } = useGoal();
 
-  const handleOpen = () => {
+  const handleOpen = (id) => {
     setOpen(true);
+    localStorage.setItem(`@Habitue:Group`, id);
+    setGroupId(id);
   };
 
   const handleClose = () => {
@@ -58,12 +62,8 @@ const CardGroup = () => {
               </pre>
             </div>
             <div>
-              <TransitionsModalGroup
-                open={open}
-                handleClose={handleClose}
-                id={elem.id}
-              />
-              <Bnt onClick={handleOpen}>Metas e Atividades</Bnt>
+              <TransitionsModalGroup open={open} handleClose={handleClose} />
+              <Bnt onClick={() => handleOpen(elem.id)}>Metas e Atividades</Bnt>
             </div>
             <pre>
               {elem.users_on_group.length > 1
