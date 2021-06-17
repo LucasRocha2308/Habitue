@@ -7,7 +7,6 @@ export const CardStyle = styled.div`
   background: #6adb7e;
   margin: 20px auto;
   width: 180px;
-  height: 320px;
   text-align: center;
   display: flex;
   flex-direction: column;

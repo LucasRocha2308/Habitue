@@ -16,7 +16,9 @@ export default createGlobalStyle`
         }
         
         
-
+html,body{
+    min-height: 100vh;
+}
         
     body{
         background: var(--green);

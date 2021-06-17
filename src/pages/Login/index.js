@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 const Login = () => {
   const { signIn } = useAuth();
   const schema = yup.object().shape({
-    username: yup.string().required("Campo obrigatório"),
+    username: yup.string().required("Campo obrigatório!"),
     password: yup.string().required("Campo obrigatório!"),
   });
   const {
@@ -40,6 +40,7 @@ const Login = () => {
               icon={FiUser}
               label="Usuario"
               error={errors.username?.message}
+              placeholder="Insira o usuário"
             />
 
             <Input
@@ -49,6 +50,7 @@ const Login = () => {
               label="Senha"
               register={register}
               error={errors.password?.message}
+              placeholder="Insira a senha"
             />
             <ButtonGreen type="submit">Entrar</ButtonGreen>
             <h4>
