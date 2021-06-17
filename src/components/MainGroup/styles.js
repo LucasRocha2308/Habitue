@@ -31,7 +31,7 @@ export const CardsContainer = styled.div`
   p {
     font-weight: bold;
     font-size: 20px;
-    line-height: 75px;
+    line-height: 32px;
     font-feature-settings: "kern" off;
   }
 

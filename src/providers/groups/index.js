@@ -46,11 +46,15 @@ export const GroupsProvider = ({ children }) => {
     // eslint-disable-next-line
   }, [auth]);
   const removeGroup = (id) => {
-    api.delete(`groups/${id}/unsubscribe/`, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
+    api
+      .delete(`groups/${id}/unsubscribe/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((_) => {
+        toast.success("Sucesso ao deletar o grupo");
+      });
 
     const newList = group.filter((elem) => elem.id !== id);
     setGroup(newList);

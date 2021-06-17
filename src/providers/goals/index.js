@@ -30,7 +30,7 @@ export const GoalProvider = ({ children }) => {
         history.push("/group");
         callGoal();
       })
-      .catch((err) => console.log(err));
+      .catch((_) => toast.error("Quantidade de caracteres excedida"));
   };
   const callGoal = () => {
     api
@@ -39,8 +39,7 @@ export const GoalProvider = ({ children }) => {
           Authorization: "Bearer " + token,
         },
       })
-      .then((res) => setGoal(res.data.results))
-      .catch((err) => console.log(err));
+      .then((res) => setGoal(res.data.results));
   };
   useEffect(() => {
     if (auth) {

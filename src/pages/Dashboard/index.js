@@ -22,7 +22,7 @@ const Dashboard = () => {
   return (
     <Container>
       <HeaderPages />
-      <StyledH1>Olá, {user}</StyledH1>
+      <StyledH1>Olá, {user}!</StyledH1>
 
       <DivCards>
         {!habit.length ? (
@@ -49,7 +49,7 @@ const Dashboard = () => {
         {!group.length ? (
           <Card
             valueTitle="Grupos"
-            valueDescription="Ainda não está buscando o milhão? Cadastre no grupo para colocar suas metas."
+            valueDescription="Ainda não está buscando o milhão? Cadastre no grupo e juntos vamos organizar nosso orçamento."
             textButton="Grupos"
             handleClick={handleGroups}
           />

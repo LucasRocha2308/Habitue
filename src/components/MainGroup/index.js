@@ -19,7 +19,7 @@ const MainGroup = () => {
         <DivCards>
           <CardsContainer>
             <p>
-              Ainda não cadastrou em nenhum grupo? Cadastre clicando nos botão
+              Ainda não cadastrou em nenhum grupo? Cadastre clicando no botão
               abaixo.
             </p>
             <ButtonWhite onClick={() => goTo("/registergroup")}>
