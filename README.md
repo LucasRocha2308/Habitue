@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+<div align=center>
+<h1  align="center">
+<a  href="https://ibb.co/XtrMXZS"><img  src="https://i.ibb.co/GR4N7vc/Frame-1-1.png" alt="Frame-1-1" border="0"></a>
+</h1>
+</div>
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![BADGE_WEB_REACT] 
 
-## Available Scripts
 
-In the project directory, you can run:
+<h2 text-align="center">
+Habitue é um projeto desenvolvido por alunos da Kenzie utilizando a tecnologia React 
+<a href="https://ibb.co/6gXyQBX"><img src="https://i.ibb.co/4P1Fkd1/image.png" alt="image" border="0"></a>
+</h2>
+</div>
 
-### `yarn start`
+## **:habitue: OBJETIVO**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O projeto tem como finalidade **estabelecer uma conexão** entre **pessoas e seu dinheiro** às pessoas que necessitam constantemente se organizar financeiramente. 
+Solucionando um grande problema recorrente que é a falta de **controle financeiro**, facilitando a organização do seu dinheiro de um modo simples.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## **:computer: TECNOLOGIAS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+#### **Website** ([React][react])
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - **[React Router Dom][react_router_dom]**
+    - **[React Icons][react_icons]**
+    - **[Axios][axios]**
+    - **[Yup][yup]**
+    - **[React Hook Form][react-hook-form]**
+    - **[React Hook Form/Resolvers][ @hookform/resolvers]**
+    - **[Styled Components][styled-components]**
+    - **[Material UI][@material-ui/core]** 
+    - **[React Toastify][react-toastify]**
+    - **[Jwt-decode][jwt-decode]**
+    - **[React pdfmake][react-pdfmake]**
+    
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### **Server** ([Api] [habit])
+  - link para a API(https://habit-docs.vercel.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **EndPoints Utilizados**
+    -  /users/
+    -  /habits/
+    -  /groups/
+    -  /goals/
+    -  /activities/
+#### **Utilitários**
 
-### `yarn eject`
+- Protótipo: **[Figma](https://www.figma.com/)** &rarr; **<kbd>[Protótipo (Habitue)](https://www.figma.com/file/3ApSf8XObPdNFnFC2bIizK/Habitue?node-id=152%3A2)</kbd>**
+- API: **[habit][habit]** &rarr; **
+(https://habit-docs.vercel.app/),
+- Editor: **[Visual Studio Code][vscode]** &rarr;
+- Commit Conventional: **[Commitlint][commitlint]**
+- Teste de API: **[Insomnia][insomnia]**
+- Fonte:**[Roboto][font_roboto]**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **:star2: PARCEIROS**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<div align=center>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<table style="width:100%">
+  <tr align=center>
+    <th><strong>Daniel Epichin</strong></th>
+    <th><strong>Itallo Dornelas</strong></th>
+    <th><strong>Kelsiane Lima</strong></th>
+    <th><strong>Lucas Rocha</strong></th>
+  </tr>
+  <tr align=center>
+    <td>
+      <a href="https://gitlab.com/daniel_epichin_pena">
+        <img width="200" src="https://gitlab.com/uploads/-/system/user/avatar/8108124/avatar.png">
+      </a>
+    </td>
+    <td>
+      <a href="https://gitlab.com/Itallo_Dornelas">
+<img width="200" height="180" src="https://i.ibb.co/N3gr7GX/2020-05-07.jpg" alt="2020-05-07" border="0">
+      </a>
+    </td>
+    <td>
+      <a href="https://gitlab.com/Kelsiane">
+        <img width="200" height="180" src="https://secure.gravatar.com/avatar/07dc3607ef6213d8acdae53adae5fe15?s=800&d=identicon">
+      </a>
+    </td>
+    <td>
+      <a href="https://gitlab.com/LucasRocha2308">
+        <img width="200" height="180" src="https://media-exp3.licdn.com/dms/image/C4D03AQF84tVGwqKeYw/profile-displayphoto-shrink_200_200/0/1539227533243?e=1628726400&v=beta&t=1WZmsUR78mx6S0Ebpi3q0c0K0DVwNQdz1bH1c4j8edo">
+      </a>
+    </td>
+  </tr>
+</table>
 
-## Learn More
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **:star2: AGRADECIMENTOS**
+<div align=center>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<table style="width:100%">
+  <tr align=center>
+    <th><strong>Kenzie Academy Brasil</strong></th>
+  </tr>
+  <tr align=center>
+    <td>
+      <a href="https://kenzie.com.br/">
+        <img src="https://kenzie.com.br/images/popup-img.svg">
+      </a>
+    </td>
+  </tr>
+</table>
 
-### Code Splitting
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- Badges -->
+[BADGE_WEB_REACT]: https://img.shields.io/badge/web-react-blue
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
