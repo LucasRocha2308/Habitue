@@ -9,6 +9,7 @@ const GroupsContext = createContext();
 export const GroupsProvider = ({ children }) => {
   const token = localStorage.getItem("@Habitue:token");
   const [group, setGroup] = useState([]);
+  const [subscribeGroup, setSubscribeGroup] = useState([]);
   const { auth } = useAuth();
 
   const registerGroup = (data, history) => {
@@ -27,6 +28,26 @@ export const GroupsProvider = ({ children }) => {
         toast.error("Erro ao criar o grupo");
       });
   };
+  const subscribeToGroup = (id) => {
+    api
+      .post(
+        `groups/${id}/subscribe/`,
+        {},
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
+      .then((_) => {
+        toast.success("Sucesso ao entrar no grupo");
+        callGroupApi();
+        callGroup();
+      })
+      .catch((_) => {
+        toast.error("Erro ao entrar no grupo");
+      });
+  };
 
   const callGroup = () => {
     api
@@ -39,9 +60,21 @@ export const GroupsProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const callGroupApi = () => {
+    api
+      .get("groups/?category=Finan%C3%A7as", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((res) => setSubscribeGroup(res.data.results))
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     if (auth) {
       callGroup();
+      callGroupApi();
     }
     // eslint-disable-next-line
   }, [auth]);
@@ -62,7 +95,14 @@ export const GroupsProvider = ({ children }) => {
 
   return (
     <GroupsContext.Provider
-      value={{ group, setGroup, registerGroup, removeGroup }}
+      value={{
+        group,
+        subscribeGroup,
+        subscribeToGroup,
+        setGroup,
+        registerGroup,
+        removeGroup,
+      }}
     >
       {children}
     </GroupsContext.Provider>
