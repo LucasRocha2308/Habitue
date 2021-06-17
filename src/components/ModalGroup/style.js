@@ -2,53 +2,55 @@ import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 
 export const ModalWrapper = styled.div`
-  width: 500px;
-  height: 300px;
+  width: 60%;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #4d8f6a;
-  color: #000;
+  background: var(--dark-green);
+  color: #000000;
   border-radius: 10px;
+  padding-bottom: 20px;
 `;
 
 export const ModalContent = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 100%;
+
   line-height: 1.8;
-  color: #141414;
-  flex-wrap: wrap;
-  div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    h2 {
-      color: var(--green);
-      font-style: italic;
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 42px;
-      text-align: center;
-      text-shadow: 0px 0px 8px var(--green-header);
-      padding-top: 10px;
-    }
-    div {
-      display: flex;
-      flex-direction: row;
-      width: 90%;
-      margin: 0 auto;
-      div {
-        background: var(--green);
-        width: 80%;
-        margin: 0 auto;
-        box-shadow: inset 0px 0px 54px 17px rgba(0, 0, 0, 0.25);
-      }
-    }
+`;
+export const Container = styled.div`
+  display: flex;
+  width: 90%;
+  background: var(--green);
+  border-radius: 10px;
+  border: 2 solid var(--gray);
+  overflow-y: scroll;
+
+  h2 {
+    color: var(--gray);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0px 0px 8px var(--green-header);
+    padding-top: 10px;
   }
 `;
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
 
+  gap h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0px 0px 8px var(--green-header);
+  }
+`;
 export const CloseModalButton = styled(MdClose)`
   cursor: pointer;
   width: 32px;
@@ -60,6 +62,7 @@ export const Bnt = styled.button`
   border: 1px solid #000000;
   border-radius: 20px;
   width: 20px;
+  margin-top: 10px;
   height: 20px;
 
   ::after {

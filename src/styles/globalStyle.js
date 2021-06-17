@@ -22,7 +22,7 @@ html,body{
         
     body{
         background: var(--green);
-        color: var(--white);        
+        color: var(--white);      
     }
     body,input, button{
         font-family: 'Roboto', sans-serif;

@@ -3,8 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { ModalWrapper, ModalContent, Bnt } from "./style";
+import { ModalWrapper, ModalContent, Bnt, Content, Container } from "./style";
 import { useHistory } from "react-router-dom";
+import { useGoal } from "../../providers/goals";
+import { useActivitie } from "../../providers/activities";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -20,9 +22,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModalGroup({ open, handleClose, id }) {
+export default function TransitionsModalGroup({ open, handleClose }) {
   const classes = useStyles();
   const history = useHistory();
+  const { goal } = useGoal();
+  const { activitie } = useActivitie();
   const goTo = (path) => {
     history.push(path);
   };
@@ -44,18 +48,40 @@ export default function TransitionsModalGroup({ open, handleClose, id }) {
         <Fade in={open}>
           <ModalWrapper>
             <ModalContent>
-              <div>
-                <h2>Metas</h2>
-                <div>
-                  <div>Cadastre metas ao grupo</div>
-                  <Bnt onClick={() => goTo("/registergoal")} />
-                </div>
-                <h2>Atividades</h2>
-                <div>
-                  <div>Cadastre atividades ao grupo</div>
-                  <Bnt onClick={() => goTo("/registeractivities")} />
-                </div>
-              </div>
+              <h2>Metas</h2>
+              <Container>
+                {!goal.length ? (
+                  <h2>O grupo precisa de algumas metas </h2>
+                ) : (
+                  goal.map((goals) => {
+                    return (
+                      <Content key={goals.id}>
+                        <h3>{goals.title}</h3>
+                        <h4>Dificuldade</h4>
+                        <p>{goals.difficulty}</p>
+                      </Content>
+                    );
+                  })
+                )}
+              </Container>
+              <Bnt onClick={() => goTo("/registergoal")} />
+              <h2>Atividades</h2>
+              <Container>
+                {!activitie.length ? (
+                  <h2>O grupo precisa de algumas atividades </h2>
+                ) : (
+                  activitie.map((activities) => {
+                    return (
+                      <Content key={activities.id}>
+                        <h3>{activities.title}</h3>
+                        <h4>data e hora</h4>
+                        <p>{activities.realization_time}</p>
+                      </Content>
+                    );
+                  })
+                )}
+              </Container>
+              <Bnt onClick={() => goTo("/registeractivities")} />
             </ModalContent>
           </ModalWrapper>
         </Fade>
