@@ -23,6 +23,7 @@ export const GroupsProvider = ({ children }) => {
         toast.success("Sucesso ao criar um grupo");
         history.push("/dashboard");
         callGroup();
+        callGroupApi();
       })
       .catch((_) => {
         toast.error("Erro ao criar o grupo");
