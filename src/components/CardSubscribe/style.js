@@ -9,12 +9,12 @@ export const CardStyle = styled.div`
     var(--dark-green) 0%,
     transparent 100%
   );
-  margin: 20px auto;
-  width: 90%;
+  width: 250px;
+  height: 750px;
+  justify-content: space-between;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   position: relative;
   padding: 15px;
@@ -29,12 +29,13 @@ export const CardStyle = styled.div`
     text-shadow: 0px 0px 8px var(--green-header);
   }
   div {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
     align-items: center;
-    width: 10%;
+    justify-content: center;
   }
   p {
     font-weight: bold;
@@ -46,33 +47,29 @@ export const CardStyle = styled.div`
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px 0;
   }
-  pre {
+  div {
+    width: 100%;
     color: var(--green);
     padding: 15px 0;
-  }
-
-  @media (min-width: 1100px) {
-    flex-direction: row;
-    height: 150px;
   }
 `;
 
 export const FlexCard = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   width: 100%;
+  margin-top: 20px;
+  padding: 0 15px;
+  gap: 20px;
   justify-content: center;
-
-  @media only screen and (min-width: 780px) {
-    justify-content: flex-start;
-  }
 `;
 export const ContainerButton = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
   margin: 0 auto 10px;
-  gap: 10px;
+  gap: 20px;
   justify-content: space-between;
   @media only screen and (min-width: 1100px) {
     justify-content: center;
@@ -86,8 +83,14 @@ export const BntRemove = styled.button`
   box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.57);
   border-radius: 20px;
   width: 20px;
-  margin-bottom: 50px;
+  margin: 50px;
   height: 20px;
+
+  ::after {
+    content: "X";
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+  }
 
   @media (min-width: 1100px) {
     margin-bottom: 0;
