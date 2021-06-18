@@ -86,7 +86,8 @@ export const GroupsProvider = ({ children }) => {
         },
       })
       .then((_) => {
-        toast.success("Sucesso ao deletar o grupo");
+        toast.success("Você saiu do grupo");
+        callGroupApi();
       });
 
     const newList = group.filter((elem) => elem.id !== id);
