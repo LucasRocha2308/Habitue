@@ -6,10 +6,17 @@ import { useHistory } from "react-router-dom";
 import { TiArrowBack } from "react-icons/all";
 
 const CardSubscribe = () => {
+  const myId = JSON.parse(localStorage.getItem("@Habitue:id"));
   const history = useHistory();
   const { subscribeGroup, subscribeToGroup } = useGroups();
   const goTo = (path) => {
     history.push(path);
+  };
+
+  const youIn = (users) => {
+    return users.some((elem) => {
+      return elem.id === myId;
+    });
   };
 
   return (
@@ -48,15 +55,19 @@ const CardSubscribe = () => {
                   : elem.creator.username}
               </pre>
             </div>
-
             <pre>
               {elem.users_on_group.length > 1
                 ? `${elem.users_on_group.length} pessoas no grupo`
                 : `${elem.users_on_group.length} pessoa no grupo`}
             </pre>
-            <ButtonGreen onClick={() => subscribeToGroup(elem.id)}>
-              Inscreva-se
-            </ButtonGreen>
+
+            {youIn(elem.users_on_group) ? (
+              <ButtonWhite>Inscrito</ButtonWhite>
+            ) : (
+              <ButtonGreen onClick={() => subscribeToGroup(elem.id)}>
+                Inscreva-se
+              </ButtonGreen>
+            )}
           </CardStyle>
         );
       })}
