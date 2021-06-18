@@ -51,6 +51,9 @@ export default function MenuBurguer() {
       >
         <MenuItem onClick={() => btnFunction("/habit")}>Hábitos</MenuItem>
         <MenuItem onClick={() => btnFunction("/group")}>Grupos</MenuItem>
+        <MenuItem onClick={() => goTo("/subscribegroup")}>
+          Participe grupo
+        </MenuItem>
         <MenuItem onClick={handlerLogout}>Logout</MenuItem>
       </Menu>
     </div>
