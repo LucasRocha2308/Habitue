@@ -25,7 +25,6 @@ const Routes = () => {
       <Route path="/group" component={Group} isPrivate />
       <Route path="/registergoal" component={RegisterGoal} isPrivate />
       <Route path="/subscribegroup" component={SubscribeGroup} isPrivate />
-
       <Route
         path="/registeractivities"
         component={RegisterActivities}
