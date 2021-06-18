@@ -20,6 +20,9 @@ export const Container = styled.div`
   min-height: 100vh;
 `;
 export const StyledH1 = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 20px 0;
 `;

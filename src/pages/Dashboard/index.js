@@ -5,6 +5,7 @@ import { useUser } from "../../providers/user";
 import { useHabits } from "../../providers/habits";
 import { DivCards, StyledH1, Container } from "./styles";
 import { useGroups } from "../../providers/groups";
+import ChangeUser from "../../components/ChangeUser";
 
 const Dashboard = () => {
   const { user } = useUser();
@@ -22,7 +23,9 @@ const Dashboard = () => {
   return (
     <Container>
       <HeaderPages />
-      <StyledH1>Olá, {user}!</StyledH1>
+      <StyledH1>
+        Olá, {user}! <ChangeUser />
+      </StyledH1>
 
       <DivCards>
         {!habit.length ? (
