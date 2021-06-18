@@ -32,35 +32,19 @@ const CardGroup = () => {
         return (
           <CardStyle key={elem.id}>
             <div>
-              <h2>
-                {elem.name.length > 8
-                  ? `${elem.name.substring(0, 8)}...`
-                  : elem.name}
-              </h2>
+              <h2>{elem.name}</h2>
             </div>
             <div>
               <p>Categoria</p>
-              <pre>
-                {elem.category.length > 15
-                  ? `${elem.category.substring(0, 15)}...`
-                  : elem.category}
-              </pre>
+              <div>{elem.category}</div>
             </div>
             <div>
               <p>Descrição</p>
-              <pre>
-                {elem.description.length > 15
-                  ? `${elem.description.substring(0, 15)}...`
-                  : elem.description}
-              </pre>
+              <div>{elem.description}</div>
             </div>
             <div>
               <p>Criador</p>
-              <pre>
-                {elem.creator.username.length > 7
-                  ? `${elem.creator.username.substring(0, 7)}...`
-                  : elem.creator.username}
-              </pre>
+              <div>{elem.creator.username}</div>
             </div>
             <div>
               <TransitionsModalGroup open={open} handleClose={handleClose} />
