@@ -23,6 +23,7 @@ export const GroupsProvider = ({ children }) => {
         toast.success("Sucesso ao criar um grupo");
         history.push("/dashboard");
         callGroup();
+        callGroupApi();
       })
       .catch((_) => {
         toast.error("Erro ao criar o grupo");
@@ -86,7 +87,8 @@ export const GroupsProvider = ({ children }) => {
         },
       })
       .then((_) => {
-        toast.success("Sucesso ao deletar o grupo");
+        toast.success("Você saiu do grupo");
+        callGroupApi();
       });
 
     const newList = group.filter((elem) => elem.id !== id);
