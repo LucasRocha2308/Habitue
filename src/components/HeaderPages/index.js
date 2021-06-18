@@ -24,11 +24,11 @@ const HeaderPages = () => {
         <MenuBurguer />
       </div>
       <div className="div-buttons">
-        <ButtonWhite onClick={() => goTo("/subscribegroup")}>
-          Participe grupo
-        </ButtonWhite>
         <ButtonWhite onClick={() => goTo("/habit")}>Hábitos</ButtonWhite>
         <ButtonWhite onClick={() => goTo("/group")}>Grupos</ButtonWhite>
+        <ButtonWhite onClick={() => goTo("/subscribegroup")}>
+          Entrar grupos
+        </ButtonWhite>
         <ButtonGreen onClick={handlerLogout}>Logout</ButtonGreen>
       </div>
     </DivHeaderPages>
